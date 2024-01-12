@@ -3,7 +3,7 @@ node ('master') {
   stage('Build') {
     withMaven(maven: 'M3') {
       if ( isUnix()) {
-        sh 'mnv -Dmaven.test.failure.ignore clean package'
+        sh 'mvn -Dmaven.test.failure.ignore clean package'
       }
       else {
         bat 'mvn -Dmaven.test.failure.ignore clean package'
